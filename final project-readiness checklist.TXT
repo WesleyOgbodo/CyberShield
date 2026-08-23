@@ -1,0 +1,10 @@
+What to demonstrate to your supervisor/examiner
+The exact order to demonstrate the system
+What each feature proves
+What to say when explaining the system
+How to explain the phishing rules and risk scoring
+How to explain the intrusion-detection mechanism
+How to explain the database
+How to transfer the project to another computer
+How to start the application from a clean machine
+Common questions your examiner may ask and strong answers

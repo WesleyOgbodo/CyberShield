@@ -1,0 +1,90 @@
+INTEGRATED CYBERSECURITY SYSTEM
+TRANSFER & SETUP GUIDE
+=================================
+
+1. INSTALL ON THE DESTINATION COMPUTER
+--------------------------------------
+Install:
+- Python 3.x
+- MySQL Server
+- Visual Studio Code (recommended)
+- Google Chrome or Mozilla Firefox
+
+2. EXTRACT AND OPEN THE PROJECT
+-------------------------------
+Extract the ZIP and open the integrated_cybersecurity_system folder in VS Code.
+Keep the folder structure unchanged.
+
+3. CREATE THE PYTHON ENVIRONMENT
+--------------------------------
+Windows:
+    setup_windows.bat
+
+Or manually:
+    python -m venv venv
+    venv\Scripts\activate
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+
+4. CREATE THE MYSQL DATABASE
+----------------------------
+Start MySQL Server.
+Open MySQL Workbench or the MySQL command line and run:
+    database/schema.sql
+
+Optional demonstration data:
+    database/sample_data.sql
+
+5. CREATE .ENV
+--------------
+Copy .env.example to .env and enter the MySQL credentials for THIS computer.
+Example:
+    SECRET_KEY=change-this-development-secret
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_USER=root
+    DB_PASSWORD=YOUR_MYSQL_PASSWORD
+    DB_NAME=integrated_cybersecurity
+    FLASK_DEBUG=1
+    SESSION_LIFETIME=1800
+    SESSION_COOKIE_SECURE=0
+
+Never share a real .env containing passwords or private secrets.
+
+6. RUN THE APPLICATION
+----------------------
+Windows:
+    run_windows.bat
+
+Or:
+    venv\Scripts\activate
+    python app.py
+
+Open:
+    http://127.0.0.1:5000
+
+7. TEST THE APPLICATION
+-----------------------
+Register -> Login -> OTP -> Dashboard -> URL Scanner -> Activity Logs -> Security Alerts -> Logout.
+
+For intrusion monitoring, enter an incorrect password three times for a valid username and verify the alert/log records.
+
+8. RUN AUTOMATED TESTS
+----------------------
+Activate the environment and run:
+    pytest -q
+
+9. IF REGISTRATION FAILS
+------------------------
+Check the terminal first. Registration requires a working MySQL connection.
+Verify:
+- MySQL Server is running.
+- database/schema.sql was executed.
+- DB credentials in .env are correct.
+- The database name is integrated_cybersecurity.
+
+10. TRANSFER AGAIN
+------------------
+Copy the source project or ZIP.
+Do not copy venv, .env, __pycache__, or .pyc files.
+On the new computer, repeat the setup and database steps.

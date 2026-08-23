@@ -1,0 +1,12 @@
+body { background: #f4f7fb; color: #14213d; min-height: 100vh; }
+.cyber-nav { background: #081b33; }
+.hero { background: linear-gradient(135deg, #081b33, #123e68); color: white; }
+.security-card, .feature-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 18px; padding: 24px; }
+.feature-card { background: white; color: #14213d; height: 100%; box-shadow: 0 8px 24px rgba(10,30,60,.06); }
+.auth-wrap { max-width: 520px; margin: 4vh auto; }
+.auth-card { border: 0; border-radius: 18px; }
+.card { border: 0; border-radius: 16px; }
+.otp-demo { font-size: 1.3rem; letter-spacing: .25rem; text-align: center; padding: 14px; background: #eef6ff; border-radius: 10px; }
+.letter-spacing { letter-spacing: .5rem; }
+.truncate { max-width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pulse { width: 18px; height: 18px; border-radius: 50%; background: #5eead4; box-shadow: 0 0 0 8px rgba(94,234,212,.15); display: inline-block; margin-right: 8px; }

@@ -1,0 +1,63 @@
+INTEGRATED CYBERSECURITY SYSTEM
+FINAL WINDOWS SETUP
+
+IMPORTANT CHANGE
+----------------
+This version uses PyMySQL instead of mysql-connector-python.
+
+PyMySQL is a pure-Python MySQL client, and cryptography is included for
+MySQL 8 caching_sha2_password authentication. The application no longer depends
+on the native mysql-connector-python extension that was causing the Windows
+process to terminate with exit code -1073741819 (0xC0000005).
+
+MySQL Server is still required. The mysql.exe command-line client is NOT
+required for Flask itself.
+
+SETUP
+-----
+
+1. Run:
+       setup_windows.bat
+
+2. Configure .env with your MySQL password.
+
+3. Run:
+       setup_database_windows.bat
+
+       or 
+
+       Get-Content .\database\schema.sql | mysql -u root -p integrated_cybersecurity
+
+4. Run:
+       run_windows.bat
+
+5. Open:
+       http://127.0.0.1:5000/health
+
+6. If /health returns {"status":"ok"}, open:
+       http://127.0.0.1:5000/register
+
+
+MYSQL
+-----
+
+The included database setup script automatically uses:
+
+    C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe
+
+if that path exists.
+
+The Flask application itself connects through PyMySQL and does not need
+mysql.exe in Windows PATH.
+
+
+DO NOT SHARE
+------------
+
+Do not share a real .env file containing your MySQL password or other
+private secrets.
+
+CSRF FIX
+--------
+All POST forms now include the application CSRF token, including OTP verification and URL scanning.
+
