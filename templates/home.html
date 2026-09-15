@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block title %}CyberShield | Home{% endblock %}
+{% block content %}
+<section class="hero p-4 p-lg-5 rounded-4 shadow-sm">
+  <div class="row align-items-center g-4">
+    <div class="col-lg-7"><span class="badge bg-primary mb-3">Integrated Cybersecurity</span><h1 class="display-5 fw-bold">Phishing Detection. Intrusion Monitoring. MFA.</h1><p class="lead">A unified web-based security platform built around the documented project objectives.</p><a class="btn btn-primary btn-lg me-2" href="{{ url_for('auth.login') }}">Get Started</a><a class="btn btn-outline-light btn-lg" href="{{ url_for('auth.register') }}">Create Account</a></div>
+    <div class="col-lg-5"><div class="security-card"><div class="pulse"></div><h4>Protection Layers</h4><p>Credential security → OTP verification → suspicious URL analysis → login monitoring → security alerts.</p></div></div>
+  </div>
+</section>
+<div class="row g-4 mt-4"><div class="col-md-4"><div class="feature-card"><h5>Phishing Detection</h5><p>Rule-based heuristic analysis of suspicious URL characteristics.</p></div></div><div class="col-md-4"><div class="feature-card"><h5>Intrusion Monitoring</h5><p>Tracks repeated failed login attempts and raises alerts.</p></div></div><div class="col-md-4"><div class="feature-card"><h5>OTP MFA</h5><p>Adds a second verification step after password authentication.</p></div></div></div>
+{% endblock %}
